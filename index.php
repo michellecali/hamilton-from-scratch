@@ -3,20 +3,17 @@
 <!-- read somewhere lang a best practice; true? -->
 	<head>
 		<title>
-			michelle cali online
+			michelle cali | online
 		</title>
 		<link rel="stylesheet" Type="text/css" href="basic.css">
 	</head>
 	<body>
 		<div id="header">
-			<h1>michelle cali online</h1>
+			<h1>michelle cali | online</h1>
 		</div>
 		<div id="sidebar">
-			<ul id="sidebar_nav">
-  				<li><a href="index.html">home</a></li>
-  				<li><a href="my_vision.html">my vision</a></li>
-  				<li><a href="bonus_mgc.html">bonus mgc</a></li>
-  				<li><a href="industry_musings.html">industry musings</a></li>
+			<ul>
+			<?php include ("inc/nav.inc.php"); ?>
   			</ul>
   		</div>
 		<div id="section">
@@ -25,10 +22,7 @@
   		</div>
   		<div id="footer">
   			<ul id="footer_nav">
-				<li><a href="https://www.facebook.com/michelle.cali/">facebook</a></li>
-  				<li><a href="https://twitter.com/mctex">twitter</a></li>
-  				<li><a href="https://www.linkedin.com/in/michelle-cali-406305">linked in</a></li>
-  				<li><a href="https://github.com/michellecali">github</a></li>
+			<?php include ("inc/footer.inc.php"); ?>
 			</ul>
 		</div>
 	</body>
