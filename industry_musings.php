@@ -13,9 +13,7 @@
 			<h1>musings | thoughts on the industry</h1>
 		</div>
 		<div id="sidebar">
-			<ul>
 			<?php include ("inc/nav.inc.php"); ?>
-  			</ul>
   		</div>
 		<div id="section">
 			<p>Great stuff goes here soon!</p>

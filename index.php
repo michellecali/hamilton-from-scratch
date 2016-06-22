@@ -5,7 +5,6 @@
 		<title>
 			michelle cali | online
 		</title>
-		<link rel="stylesheet" Type="text/css" href="basic.css">
 		<?php $current = 'home'; ?>
 	</head>
 	<body>
@@ -13,9 +12,7 @@
 			<h1>michelle cali | online</h1>
 		</div>
 		<div id="sidebar">
-			<ul>
 			<?php include ("inc/nav.inc.php"); ?>
-  			</ul>
   		</div>
 		<div id="section">
 			<p>Welcome to Michelle Cali online! It's funny, all the things I thought I'd do with my own personal page, and now that it's time to build one, I haven't a clue what to do with it!</p>

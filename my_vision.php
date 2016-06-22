@@ -5,7 +5,6 @@
 		<title>
 			vision | goals for the future
 		</title>
-		<link rel="stylesheet" Type="text/css" href="basic.css">
 		<?php $current = 'my_vision'; ?>
 	</head>
 	<body>
@@ -13,9 +12,7 @@
 			<h1>vision | goals for the future</h1>
 		</div>
 		<div id="sidebar">
-			<ul>
 			<?php include ("inc/nav.inc.php"); ?>
-  			</ul>
   		</div>
 		<div id="section">
 			<p>Great stuff goes here soon!</p>
