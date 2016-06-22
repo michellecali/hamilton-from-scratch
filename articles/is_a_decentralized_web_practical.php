@@ -3,14 +3,13 @@
 <!-- read somewhere lang a best practice; true? -->
 	<head>
 		<title>
-			bonus | stuff i like
+			michelle cali | online
 		</title>
 		<link rel="stylesheet" Type="text/css" href="basic.css">
-		<?php $current = 'bonus_mgc'; ?>
 	</head>
 	<body>
 		<div id="header">
-			<h1>bonus | stuff i like</h1>
+			<h1>michelle cali | online</h1>
 		</div>
 		<div id="sidebar">
 			<ul>
@@ -18,7 +17,8 @@
   			</ul>
   		</div>
 		<div id="section">
-			<p>Great stuff goes here soon!</p>
+			<p>Welcome to Michelle Cali online! It's funny, all the things I thought I'd do with my own personal page, and now that it's time to build one, I haven't a clue what to do with it!</p>
+			<p>Have an idea for the type of content you'd like to see here? Please shoot me a note, and give me your thoughts!</p>
   		</div>
   		<div id="footer">
   			<ul id="footer_nav">

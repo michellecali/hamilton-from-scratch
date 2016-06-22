@@ -6,6 +6,7 @@
 			vision | goals for the future
 		</title>
 		<link rel="stylesheet" Type="text/css" href="basic.css">
+		<?php $current = 'my_vision'; ?>
 	</head>
 	<body>
 		<div id="header">

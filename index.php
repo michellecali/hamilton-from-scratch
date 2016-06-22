@@ -6,6 +6,7 @@
 			michelle cali | online
 		</title>
 		<link rel="stylesheet" Type="text/css" href="basic.css">
+		<?php $current = 'home'; ?>
 	</head>
 	<body>
 		<div id="header">

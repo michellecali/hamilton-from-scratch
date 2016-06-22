@@ -6,6 +6,7 @@
 			musings | thoughts on the industry
 		</title>
 		<link rel="stylesheet" Type="text/css" href="basic.css">
+		<?php $current = 'industry_musings'; ?>
 	</head>
 	<body>
 		<div id="header">
