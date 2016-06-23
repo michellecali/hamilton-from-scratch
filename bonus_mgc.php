@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <!-- read somewhere lang a best practice; true? -->
+<link rel="stylesheet" type="text/css" href="something.css">
 	<head>
 		<title>
 			bonus | stuff i like
