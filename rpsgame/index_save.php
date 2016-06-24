@@ -19,8 +19,17 @@
 		</form>  	
 		<?php
 		  if ($_GET['choice']) {
-			$player_value = $_GET['choice'];
-		  	echo $player_value;
+			$player_answer = $_GET['choice'];
+		  	$computer_answer = rand(1,3);
+		  	$array = array ('1' => 'rock', '2' => 'paper', '3' => 'scissors');
+		  	$array = array_values($array);
+		  	// if ($player_answer == "$computer_answer") {
+		  		echo "You chose " . $array[$player_answer];
+		  	// }
+		  	switch ([$player_answer, $computer_answer]) {
+		  		case ["rock", "rock"]:
+		  		 echo "We TIED!!! Play again??";
+		  	}
 		  }
 		?>
 	</body>
