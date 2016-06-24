@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!-- read somewhere lang a best practice; true? -->
-<link rel="stylesheet" type="text/css" href="something.css">
 	<head>
 		<title>
 			musings | thoughts on the industry
 		</title>
-		<?php $current = 'the_web_as_a_medium'; ?>
-		<style>
-		img { 
-    		width:100%; 
-		}
-		</style>
+		<link rel="stylesheet" type="text/css" href="styles.css">	
+		<?php $current = 'is_a_decentralized_web_practical'; ?>
 	</head>
-	<body>
-		<div id="header">
-			<h1>musings | thoughts on the industry</h1>
+	<body class="pagecontainer">
+	<div class="flex-container-left">
+		<div class="name-and-social">
+			<h2>michelle cali</h2>
+			<?php include ("inc/social.inc.php"); ?>
 		</div>
-		<div id="sidebar">
+		<div class="nav-links">
 			<?php include ("inc/nav.inc.php"); ?>
-  		</div>
-		<div id="section">
-			<h2> The Web as a Medium</h2>
+	  	</div>
+	</div>
+	<div class="flex-container-right">
+		<div class="body-text">
+			<h2>musings | thoughts on the industry</h2>
+			<h3> The Web as a Medium</h3>
 			<p>June 22, 2016</p>
 			<br>
-			<p> Great stuff goes here</p>
-			
-  		</div>
-  		<img src="/media/osi_model.png" alt="OSI Model" style="width:360px;height:231px;">
-  		<div id="footer">
-  			<ul id="footer_nav">
-			<?php include ("inc/footer.inc.php"); ?>
-			</ul>
-		</div>
+			<p> Interesting article being written as you read this!</p>
+	  	</div>
+	</div>
 	</body>
 </html>

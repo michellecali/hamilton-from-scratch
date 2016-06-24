@@ -1,27 +1,27 @@
 <!DOCTYPE html>
 <html lang="en-US">
-<!-- read somewhere lang a best practice; true? -->
-<link rel="stylesheet" type="text/css" href="something.css">
 	<head>
 		<title>
 			vision | goals for the future
 		</title>
+		<link rel="stylesheet" type="text/css" href="styles.css">	
 		<?php $current = 'my_vision'; ?>
 	</head>
-	<body>
-		<div id="header">
-			<h1>vision | goals for the future</h1>
+	<body class="pagecontainer">
+	<div class="flex-container-left">
+		<div class="name-and-social">
+			<h2>michelle cali</h2>
+			<?php include ("inc/social.inc.php"); ?>
 		</div>
-		<div id="sidebar">
+		<div class="nav-links">
 			<?php include ("inc/nav.inc.php"); ?>
-  		</div>
-		<div id="section">
-			<p>Great stuff goes here soon!</p>
-  		</div>
-  		<div id="footer">
-  			<ul id="footer_nav">
-			<?php include ("inc/footer.inc.php"); ?>
-			</ul>
-		</div>
+	  	</div>
+	</div>
+	<div class="flex-container-right">
+		<div class="body-text">
+			<h2>vision | goals for the future</h2>
+			<p>Interesting stuff coming soon!</p>
+	  	</div>
+	</div>
 	</body>
 </html>
