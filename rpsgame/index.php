@@ -26,6 +26,31 @@
 		  	if ($player_answer == $computer_answer) {
 		  		echo "<br> WE TIED! Play again?";
 		  	}
+		  	switch ([$player_answer, $computer_answer]) {
+		  		case ["6", "7"]:
+		  			echo "<br> I win! I rule!";
+		  		break;
+
+		  		case ["6", "8"]:
+		  		 	echo "<br> You won! You're great!"; 
+		  		break;
+
+		  		case ["7", "8"]:
+		  			echo "<br> I win! I rule!";
+		  		break;
+
+		  		case ["7", "6"]:
+		  		 	echo "<br> You won! You're great!"; 
+		  		break;
+
+		  		case ["8", "6"]:
+		  			echo "<br> I win! I rule!";
+		  		break;
+
+		  		case ["8", "7"]:
+		  		 	echo "<br> You won! You're great!"; 
+		  		break;
+		  	}
 		  }
 		?>
 	</body>
