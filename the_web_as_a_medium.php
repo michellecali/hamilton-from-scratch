@@ -4,13 +4,14 @@
 		<title>
 			musings | thoughts on the industry
 		</title>
-		<link rel="stylesheet" type="text/css" href="styles.css">	
-		<?php $current = 'is_a_decentralized_web_practical'; ?>
+		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic|Arimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="styles.css">
+		<link href='https://fonts.googleapis.com/css?family=Cantata+One|Imprima' rel='stylesheet' type='text/css'>	
+		<?php $current = 'the_web_as_a_medium'; ?>
 	</head>
 	<body class="pagecontainer">
 	<div class="flex-container-left">
 		<div class="name-and-social">
-			<h2>michelle cali</h2>
 			<?php include ("inc/social.inc.php"); ?>
 		</div>
 		<div class="nav-links">
@@ -20,7 +21,7 @@
 	<div class="flex-container-right">
 		<div class="body-text">
 			<h2>musings | thoughts on the industry</h2>
-			<h3> The Web as a Medium</h3>
+			<h3> The web as a medium</h3>
 			<p>June 22, 2016</p>
 			<br>
 			<p> Interesting article being written as you read this!</p>
