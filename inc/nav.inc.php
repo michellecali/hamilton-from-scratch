@@ -2,7 +2,7 @@
 	<h3>pages</h3>
 	<li> <?php if($current == 'home') {echo 'home';} else {echo '<a href="index.php">home</a>';}?> </li>
 	<li> <?php if($current == 'my_vision') {echo 'my vision';} else {echo '<a href="my_vision.php">my vision</a>';}?> </li> 
-	<li> <?php if($current == 'bonus_mgc') {echo 'bonus mgc';} else {echo '<a href="bonus_mgc.php">bonus mgc</a>';}?> </li>
+	<li> <?php if($current == 'game') {echo 'a bonus game!';} else {echo '<a href="game.php">a bonus game!</a>';}?> </li>
 
 				
 	<h3>musings | industry</h3>
