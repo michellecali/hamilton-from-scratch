@@ -19,9 +19,8 @@
 		</form>  	
 		<?php
 		  if ($_GET['choice']) {
-			$player_answer = $_GET['choice'];
-		  	$computer_answer = rand(1,3);
-		  	echo "You had " . $player_answer . " and I had " . $computer_answer;
+			$player_value = $_GET['choice'];
+		  	echo $player_value;
 		  }
 		?>
 	</body>
