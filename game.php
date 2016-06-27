@@ -3,11 +3,16 @@
 <?php include ("includes/header.includes.php"); ?>
 			<form>
 				<h1>Choose your weapon!</h1>
-			  	<input type="radio" name="choice" value="6"> rock<br>
-			  	<input type="radio" name="choice" value="7"> paper<br>
-			  	<input type="radio" name="choice" value="8"> scissors<br><br>
+			  	<input type="radio" name="choice" value="rock"> rock<br>
+			  	<input type="radio" name="choice" value="paper"> paper<br>
+			  	<input type="radio" name="choice" value="scissors"> scissors<br><br>
 			  	<input type="submit">
 			</form> 
 <?php include ("includes/functions.includes.php"); ?> 	
-			<?php rock_paper_scissors(); ?>
+			<?php   
+				$x = create_player_choice_variable(); 
+				$y = create_computer_choice_variable();
+				echo recap_choices($x, $y);
+				echo declare_winner($x, $y);
+			?>
 	<?php include ("includes/footer.includes.php"); ?>

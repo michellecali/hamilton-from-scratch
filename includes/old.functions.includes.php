@@ -7,7 +7,6 @@
 		return $player_choice;
 	}
 
-
 	function create_computer_choice_variable(){
 	// this Function returns a Variable with the computer choice
 		$array = array("rock", "paper", "scissors");
@@ -16,32 +15,45 @@
 		return $computer_choice;
 	}
 
-
-	function recap_choices($player_choice, $computer_choice){
-	//this Function returns a string recapping the player and computer choices
-	return "You chose $player_choice and I chose $computer_choice...";
-	}
-
-	function declare_winner($player_choice, $computer_choice){
-	//this Function evaluates for the winner, and returns a String notifying of the outcome
+	function evaluate_winner(){
+	//this Function evaluates for the winner, and returns a Variable with the outcome
+  		$outcome = "";
   		switch ([$player_choice, $computer_choice]) {
   			case ["rock", "rock"]:
   			case ["paper", "paper"]:
   			case ["scissors", "scissors"]:
-  				return "<br> WE TIED! Play again?";
+  				return $outcome = "tie";
   			break;
 
   			case ["rock", "paper"]:
   			case ["paper", "scissors"]:
   			case ["scissors", "rock"]:
-  				return "<br> I win! I rule!";
+  				return $outcome = "lose";
   			break;
 
   			case ["rock", "scissors"]:
   			case ["paper", "rock"]:
   			case ["scissors", "paper"]:
-  				return "<br> You won! You're great!";
+  				return $outcome = "win";
   			break;
   		}
  	 }
+
+	function notify_user(){
+	// return a series of Strings recapping both the player and computer choices
+		return "<br><br>You chose $player_choice and I chose $computer_choice";
+	  	switch ([$outcome]) {
+	  		case ["tie"]:
+	  			return "<br> WE TIED! Play again?";
+	  		break;
+
+	  		case ["lose"]:
+	  			return "<br> I win! I rule!";
+	  		break;
+
+	  		case ["win"]:
+	  			return "<br> You won! You're great!";
+	  		break;
+ 	 	}
+	}
 ?>
