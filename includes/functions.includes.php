@@ -19,7 +19,7 @@
 
 	function recap_choices($player_choice, $computer_choice){
 	//this Function returns a string recapping the player and computer choices
-	return "You chose $player_choice and I chose $computer_choice...";
+	return "<br><br>You chose $player_choice and I chose $computer_choice...";
 	}
 
 	function declare_winner($player_choice, $computer_choice){
