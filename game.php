@@ -4,8 +4,8 @@
 		<title>
 			rock | paper | scissors
 		</title>
-		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic|Arimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Cantata+One|Imprima' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic%7CArimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Cantata+One%7CImprima' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="styles.css">	
 		<?php $current = 'game'; ?>
 	</head>

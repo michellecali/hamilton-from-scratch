@@ -43,6 +43,9 @@
   .nav-links h3 {
     color: #FC9D9A;
   }
+   .nav-links ul {
+    list-style-type: none;
+  }
   .current {
     color: black;
   }
