@@ -1,7 +1,7 @@
 			<?php 
 
 			function rock_paper_scissors(){
-			  $player_answer = $_GET['choice'];
+			    $player_answer = $_GET['choice'];
 				$computer_answer = rand(6,8);
 			  	$array = array ('6' => 'rock', '7' => 'paper', '8' => 'scissors');
 			  if ($_GET['choice']) {
@@ -21,8 +21,6 @@
 			  		case ["8", "7"]:
 			  		 	echo "<br> You won! You're great!"; 
 			  		break;
-			  	}
-			  }
 			  	}
 			  }
 			}
