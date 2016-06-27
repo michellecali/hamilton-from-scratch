@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html lang="en-US">
-	<head>
-		<title>
-			musings | thoughts on the industry
-		</title>
-		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic|Arimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Cantata+One|Imprima' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="styles.css">	
-		<?php $current = 'is_a_decentralized_web_practical'; ?>
-	</head>
-	<body class="pagecontainer">
-	<div class="flex-container-left">
-		<div class="name-and-social">
-			<?php include ("inc/social.inc.php"); ?>
-		</div>
-		<div class="nav-links">
-			<?php include ("inc/nav.inc.php"); ?>
-	  	</div>
-	</div>
-	<div class="flex-container-right">
-		<div class="body-text">
+<?php $current = 'is_a_decentralized_web_practical'; ?>
+<?php $title = 'musings | thoughts on the industry'; ?>
+<?php include ("includes/header.includes.php"); ?>
 			<h2>musings | thoughts on the industry</h2>
 			<h3>Is a decentralized web practical?</h3>
 						<p>June 20, 2016</p>
