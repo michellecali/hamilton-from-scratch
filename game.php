@@ -44,5 +44,4 @@
 			  	}
 			  }
 			?>
-	</body>
 	<?php include ("includes/footer.includes.php"); ?>

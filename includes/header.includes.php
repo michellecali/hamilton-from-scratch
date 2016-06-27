@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <meta charset="UTF-8">
-	<head>
 		<title><?php echo $title; ?></title>
 		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic%7CArimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Cantata+One%7CImprima' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="styles.css">	
+		<link rel="stylesheet" type="text/css" href="css/styles.css">	
 	</head>
 	<body class="pagecontainer">
 	<div class="flex-container-left">
