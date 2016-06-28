@@ -45,21 +45,21 @@
   		return $outcome;
  	 }
 
-function notify_player($outcome){
-	// this Function notifies the player of the outcome via a String
-  		switch ([$outcome]) {
-  			case ["tie"]:
-  				return "<br> WE TIED! Play again?";
-  			break;
+	function notify_player($outcome){
+		// this Function notifies the player of the outcome via a String
+	  		switch ([$outcome]) {
+	  			case ["tie"]:
+	  				return "<br> WE TIED! Play again?";
+	  			break;
 
-  			case ["player_lose"]:
-  				return "<br> I win! I rule!";
-  			break;
+	  			case ["player_lose"]:
+	  				return "<br> I win! I rule!";
+	  			break;
 
-  			case ["player_win"]:
-  				return "<br> You won! You're great!";
-  			break;
-  		}
- 	 }
+	  			case ["player_win"]:
+	  				return "<br> You won! You're great!";
+	  			break;
+	  		}
+	 }
 
 ?>
