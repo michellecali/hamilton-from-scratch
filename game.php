@@ -13,6 +13,7 @@
 				$x = create_player_choice_variable(); 
 				$y = create_computer_choice_variable();
 				echo recap_choices($x, $y);
-				echo declare_winner($x, $y);
+				$z = declare_outcome($x, $y);
+				echo notify_player($z);
 			?>
 	<?php include ("includes/footer.includes.php"); ?>
