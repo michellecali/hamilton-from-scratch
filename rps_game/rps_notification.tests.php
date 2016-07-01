@@ -31,6 +31,16 @@ echo "\nTesting player is notified appropriately of tie outcome.\n";
 	}
 echo "\n-------------------------------------------------------------------\n";
 
+echo "\nTesting player is not notified prematurely of computer selection.\n";
+	$player_choice = "";
+	if (recap_choices($player_choice, $computer_choice) == "") {
+  		echo "Success!";
+	}
+	else{
+  		echo "Failed!";
+	}
+echo "\n-------------------------------------------------------------------\n";
+
 
 echo "\n###################################################################\n";
 echo "Tests complete.\n";
