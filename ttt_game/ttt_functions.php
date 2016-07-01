@@ -19,19 +19,19 @@
 <?php
 	function get_Turn($qs){
 // this logic Function returns variable $turn by retrieving the turn character (at -2) of $qs Variable; **passed test**
-		$turn = "";
+		$turnCount = "";
 		if ($qs) {
-			$turn = substr($qs, -2, 1);
+			$turn = substr($qs, -1, 1);
 		}
-		return $turn;
+		return $turnCount;
 	}
 ?>
 <?php
-	function whoseTurn($turn){
-// this logic Function returns variable $whoseTurn by assessing the current $turn; **passed test**
-		if ($turn) {
+	function whoseTurn($turnCount){
+// this logic Function returns variable $whoseTurn by assessing the current $turnCount; **passed test**
+		if ($turnCount) {
 			$whoseTurn = "a";
-			if ($turn % 2 == 0) {
+			if ($turnCount % 2 == 0) {
 				$whoseTurn = "b";
 			}
 		return $whoseTurn;
@@ -69,18 +69,18 @@
 // this logic Function captures the name of the player choice and returns the Variable $currentBoard; **passed test**
 		$currentBoard = "";
 		if ($qs) {
-			$currentBoard = substr($qs, 3, 9);
+			$currentBoard = substr($qs, 1, 9);
 		}
 		return $currentBoard;
 	}
 ?>
 
 <?php
-	function updateMove($currentBoard, $turn, $whoseTurn, $choiceIndex){
+	function updateMove($currentBoard, $turnCount, $whoseTurn, $choiceIndex){
 // this logic Function updates the $currentBoard Variable to the $newBoard Variable by changing the corresponding index number ($choiceIndex) to the $whoseTurn player symbol (a or b); revisit inconsistency in where turn is located within the string
 		if ($currentBoard) {
 			$newBoard = $currentBoard;
-			$i = ++$turn;
+			$i = ++$turnCount;
 			$j = $whoseTurn;
 			$k = $choiceIndex;
 			$newBoard = $currentBoard . $i;
@@ -91,21 +91,18 @@
 	}
 ?>
 <?php
-	function print_Board{
-		$URL = array("")
-			$i = ++$turn;
+	function echo_newBoard($newBoard){
+		for ($i=1; $i<=9; $i++) {
+			echo "<a href=ttt_game.php?$i"."$newBoard</a>";
 		}
-		return $turn;
-
 	}
 ?>
-
 <?php
-	function add($turn){
-		if ($turn) {
-			$i = ++$turn;
+	function add($turnCount){
+		if ($turnCount) {
+			$i = ++$turnCount;
 		}
-		return $turn;
+		return $turnCount;
 
 	}
 ?>
@@ -118,3 +115,4 @@
 		return $newBoard;
 	}
 ?>
+
