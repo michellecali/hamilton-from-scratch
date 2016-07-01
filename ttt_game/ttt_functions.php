@@ -2,8 +2,8 @@
 // The game operates by initially setting a query string in html via the value of the "go" button
 // The query string is initially set to s=1000000000, where:
 //  - the letter in index 0 indicates the button pressed;
-//  - the 1 in index -1 indicates $turn, and 
-//  - the 0s found in indices 1-8 represent spaces on the board
+//  - the 1 in index 3 indicates $turn, and 
+//  - the 0s found in indices 4-12 represent spaces on the board
 // When a player selects a button, an updated query string is passed for use in the next turn via that button's value
 
 // in the comments below, Functions are noted as either 'logic' or 'notification' in terms of responsibility; tests for each can be found on test pages named accordingly?>
@@ -13,9 +13,6 @@
 // this logic Function captures the query string and returns the Variable $qs; **passed test**
 		if ($_SERVER['QUERY_STRING']) {
 			$qs = $_SERVER['QUERY_STRING'];
-		}
-		else {
-			$qs = "Who the heck knows";
 		}
 		return $qs;
 	}
@@ -112,6 +109,3 @@
 		return $newBoard;
 	}
 ?>
-
-	<!-- substr_replace('string', 'XX', 1, 2);
- -->
