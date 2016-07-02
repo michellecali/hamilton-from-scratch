@@ -36,57 +36,59 @@
 	function checkSpaces($currentBoard, $square, $whoseNext){
 	//Leveraged from classmate
 		
-		if($currentBoard[$square] == "1"){
+		if($currentBoard[$square] == "a"){
 			echo "X";
 		}
-		elseif($currentBoard[$square] == "2"){
+		elseif($currentBoard[$square] == "b"){
 			echo "O";
 		}
 		elseif($currentBoard[$square] == "0"){
 			$currentBoard[$square] = $whoseNext;
-			echo "<a href=test_index.php?board=" . $currentBoard. ">#</a>";
+			echo "<a href=ttt_game.php?board=" . $currentBoard. ">#</a>";
 		}
 	}
 ?>
-
 <?php
-	// function create_Array($whoseNext, $currentBoard){
-	// 	if ($currentBoard) {
-	// 		$array = str_split($currentBoard);
-	// 		foreach ($array as $key => $value) {
-	// 			if ($value == a) {
-	// 				$array[$key] = "X";
-	// 			}
-	// 			elseif ($value == b) {
-	// 				$array[$key] = "O";
-	// 			}
-	// 			elseif ($value == 0) {
-	// 				$i = $currentBoard;
-	// 				$i[$key] = $whoseNext;
-	// 				$array[$key] = $i;
-	// 			}
-	// 		}
-	// 	}
-	// 	return $array;
+	function checkWin($currentBoard){
+	//Leveraged from classmate
+		$win = array();
+		$winner = "";
+			$win[0] = $currentBoard[0] . $currentBoard[1] . $currentBoard[2];
+			$win[1] = $currentBoard[3] . $currentBoard[4] . $currentBoard[5];
+			$win[2] = $currentBoard[6] . $currentBoard[7] . $currentBoard[8];
+			$win[3] = $currentBoard[0] . $currentBoard[3] . $currentBoard[6];
+			$win[4] = $currentBoard[1] . $currentBoard[4] . $currentBoard[7];
+			$win[5] = $currentBoard[2] . $currentBoard[5] . $currentBoard[8];
+			$win[6] = $currentBoard[0] . $currentBoard[4] . $currentBoard[8];
+			$win[7] = $currentBoard[2] . $currentBoard[4] . $currentBoard[6];
+			foreach ($win as $value) {
+				if ($value == "aaa"){
+					$winner = "a";
+				}
+				elseif ($value == "bbb"){
+					$winner = "b";
+				}
+			}
+			if (strpos($currentBoard, "0")===false) {
+				$winner = "tie";
+			}
+			else {
+				$winner = "none";
+			}
 	}
 ?>
 <?php
-	// function print_Array($array){
-	// 	if ($array) {
-	// 		foreach ($array as $key => $value) {
-	// 			if ($value == "X") {
-	// 				echo "X";
-	// 			}
-	// 			elseif ($value == "O") {
-	// 				echo "O";
-	// 			}
-	// 			else {
-	// 				echo "<a href=index.php?board=".$value.">#</a>"
-	// 			}
+	// function notifyWinner ($winner) {
+	// 	if($winner) {
+	// 		if($winner = "a") {
+	// 			return "Congratulations, X! You win!";
 	// 		}
-	// 	}
+	// 		if($winner = "b") {
+	// 			return "Congratulations, Y! You win!";
+	// 		}
 	// }
 ?>
 
+		
 
 

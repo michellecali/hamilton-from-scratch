@@ -1,0 +1,55 @@
+body {
+  background-color: #2A2927;
+  color: white;
+  font-family: 'Exo', serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+/*.pagecontainer {
+  display: -webkit-flex;
+  display: flex;
+  min-height:100vh;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  margin: 0;*/
+
+.header {
+  background-color: #00B96A;
+  padding: 5px;
+}
+
+.container {
+  background-color: #00864B;
+  padding: 16px;
+}
+
+.board {
+  max-width: 100vh;
+  height: 100vh;
+}
+
+.board__square {
+  display: block;
+  height: 64px;
+  width: 64px;
+  margin: 3px;
+  width: 150px;
+  height: 150px;
+  background-color: #00B96A;
+  float: left;
+  line-height: 150px;
+  text-align: center;
+  font-size: 125px;
+  font-weight: 800;
+}
+
+.winner {
+  font-size: 20px;
+  max-width: 500px;
+  text-align: center;
+  margin: 10px;
+}
