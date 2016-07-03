@@ -23,17 +23,14 @@
 	echo "\n-------------------------------------------------------------------\n";
 ?>
 <?php 
-	echo "\nTesting function create_Array().\n";
-		$currentBoard = "b00a00a00";
-		$whoseNext= "b";
-		print_r(create_Array($whoseNext, $currentBoard));
-	echo "\n-------------------------------------------------------------------\n";
-?>
-<?php 
-	echo "\nTesting function create_Array().\n";
-		$currentBoard = "b00a00a00";
-		$whoseNext= "b";
-		print_r(create_Array($whoseNext, $currentBoard));
+	echo "\nTesting function checkWin().\n";
+		$currentBoard = "b0aab0a0b";
+		if (checkWin($currentBoard) == "b") {
+	  		echo "Success!";
+		}
+		else {
+	  		echo "Failed!";
+	  	}
 	echo "\n-------------------------------------------------------------------\n";
 ?>
 <?php 

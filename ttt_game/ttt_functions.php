@@ -52,7 +52,6 @@
 	function checkWin($currentBoard){
 	//Leveraged from classmate
 		$win = array();
-		$winner = "";
 			$win[0] = $currentBoard[0] . $currentBoard[1] . $currentBoard[2];
 			$win[1] = $currentBoard[3] . $currentBoard[4] . $currentBoard[5];
 			$win[2] = $currentBoard[6] . $currentBoard[7] . $currentBoard[8];
@@ -61,12 +60,12 @@
 			$win[5] = $currentBoard[2] . $currentBoard[5] . $currentBoard[8];
 			$win[6] = $currentBoard[0] . $currentBoard[4] . $currentBoard[8];
 			$win[7] = $currentBoard[2] . $currentBoard[4] . $currentBoard[6];
-			foreach ($win as $value) {
-				if ($value == "aaa"){
-					$winner = "a";
+			foreach($win as $i){
+				if($i=="aaa"){
+					return $winner = "a";
 				}
-				elseif ($value == "bbb"){
-					$winner = "b";
+				elseif($i=="bbb"){
+					return $winner = "b";
 				}
 			}
 			if (strpos($currentBoard, "0")===false) {
@@ -75,6 +74,8 @@
 			else {
 				$winner = "none";
 			}
+			print_r($win);
+			echo $winner;
 	}
 ?>
 <?php
