@@ -52,6 +52,17 @@
 			<?php checkSpaces($currentBoard, $square=8, $end, $whoseNext, $nextBoard) ?>
 		</div> 
 </div>
+	<div class="score">
+		<div class="score__row">
+			<?php showScore ($score, $player="You", $winner)  ?>
+		</div>
+		<div class="score__row">
+			<?php showScore ($score, $player="Opponent", $winner)  ?>
+		</div>
+		<div class="score__row">
+			<?php showScore ($score, $player="Draw", $winner) ?>
+		</div>
+	</div>
 </div>
 </body>
 </html>
