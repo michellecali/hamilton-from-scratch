@@ -13,13 +13,6 @@
 	</div>
 
 
-<?php
-	function get_currentBoard($status){
-	// this logic Function returns the Variable $currentBoard derived as a substring of $status
-		if ($status) {
-			$currentBoard = (substr($status, 0, 9));
-		}
-		return $currentBoard;
 	}
 ?>
 <?php

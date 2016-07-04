@@ -25,16 +25,29 @@
 	echo "\n-------------------------------------------------------------------\n";
 ?>
 <?php 
-	// echo "\nTesting function get_Score(); return query string as variable.\n";
-	// 	$status = "000a00000210";
-	// 	$counter = "";
-	// 	if (get_Score($status) == "210") {
-	//   		echo "Success!";
-	// 	}
-	// 	else {
-	//   		echo "Failed!";
-	// 	}
-	// echo "\n-------------------------------------------------------------------\n";
+	echo "\nTesting function get_Score(); return query string as variable.\n";
+		$status = "000a00000210";
+		$score = "";
+		if (get_Score($status) == "210") {
+	  		echo "Success!";
+		}
+		else {
+	  		echo "Failed!";
+		}
+	echo "\n-------------------------------------------------------------------\n";
+?>
+<?php 
+	echo "\nTesting function get_Score(); what is returned when nil.\n";
+		$status = "000a00000";
+		$score = "";
+		if (get_Score($status) == "") {
+	  		echo "Success!";
+		}
+		else {
+	  		echo "Failed!";
+		}
+		var_dump($score);
+	echo "\n-------------------------------------------------------------------\n";
 ?>
 <?php 
 	echo "\nTesting function whoseNext(); proper identification of player 2 turn.\n";
@@ -151,6 +164,30 @@
 		}
 		else {
 	  		echo "Failed! This one";
+	  	}
+	echo "\n-------------------------------------------------------------------\n";
+?>
+<?php 
+	echo "\nTesting function nextBoard() returns expected variable when score present.\n";
+		$currentBoard = "banana";
+		$score = "123";
+		if (next_Board($currentBoard, $score) == "banana123") {
+	  		echo "Success!";
+		}
+		else {
+	  		echo "Failed!";
+	  	}
+	echo "\n-------------------------------------------------------------------\n";
+?>
+<?php 
+	echo "\nTesting function nextBoard() returns expected variable when score nil.\n";
+		$currentBoard = "banana";
+		$score = "";
+		if (next_Board($currentBoard, $score) == "banana") {
+	  		echo "Success!";
+		}
+		else {
+	  		echo "Failed!";
 	  	}
 	echo "\n-------------------------------------------------------------------\n";
 ?>

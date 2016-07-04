@@ -23,6 +23,15 @@
 	}
 ?>
 <?php
+	function get_Score($status){
+	// this logic Function returns the Variable $score derived as a substring of $status
+		if ($status) {
+			$score = (substr($status, 9, 3));
+		}
+		return $score;
+	}
+?>
+<?php
 	function checkWin($currentBoard){
 		$win = array();
 		$winner = "none";
@@ -87,7 +96,16 @@
 	}
 ?>
 <?php
-	function checkSpaces($currentBoard, $square, $end, $whoseNext){
+	function next_Board($currentBoard, $score){
+		$nextBoard = $currentBoard;
+		if ($score != "") {
+			$nextBoard = $currentBoard.$score;
+		}
+		return $nextBoard;
+	}
+?>
+<?php
+	function checkSpaces($currentBoard, $square, $end, $whoseNext, $nextBoard){
 		if($currentBoard[$square] == "a"){
 			echo "X";
 		}
@@ -96,8 +114,8 @@
 		}
 		elseif($currentBoard[$square] == "0"){
 			if ($end == no) {
-				$currentBoard[$square] = $whoseNext;
-				echo "<a href=ttt_game.php?status=" . $currentBoard. ">#</a>";
+				$nextBoard[$square] = $whoseNext;
+				echo "<a href=ttt_game.php?status=".$nextBoard.">#</a>";
 			}
 			if ($end == yes) {
 				echo " ";
