@@ -166,7 +166,7 @@
 	  		echo "Failed! This one";
 	  	}
 	echo "\n-------------------------------------------------------------------\n";
-?>
+?>ß
 <?php 
 	echo "\nTesting function nextBoard() returns expected variable when score present.\n";
 		$currentBoard = "banana";

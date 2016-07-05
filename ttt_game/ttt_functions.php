@@ -96,6 +96,28 @@
 	}
 ?>
 <?php
+	function newScore ($end, $score, $player, $winner) {
+		// start here - not working but not breaking
+		if ($end == "yes") {
+			$a = $score[0];
+			$b = $score[1];
+			$c = $score[2];
+			if ($player=="You" && $winner == "a") {
+				$score[0] = ($a + 1);
+				echo $score;
+			}
+			if ($player=="Opponent" && $winner == "b") {
+				$score[1] = ($b + 1);
+				echo $score;
+			}
+			if ($player=="Draw" && $tie == "yes"){
+				$score[2] = ($c + 1);
+				echo $score;
+			}
+		}
+	}
+?>
+<?php
 	function next_Board($currentBoard, $score){
 		$nextBoard = $currentBoard;
 		if ($score != "") {
@@ -107,23 +129,22 @@
 <?php
 	function checkSpaces($currentBoard, $square, $end, $whoseNext, $nextBoard){
 		if($currentBoard[$square] == "a"){
-			echo "X";
+			return "X";
 		}
 		elseif($currentBoard[$square] == "b"){
-			echo "O";
+			return "O";
 		}
 		elseif($currentBoard[$square] == "0"){
 			if ($end == no) {
 				$nextBoard[$square] = $whoseNext;
-				echo "<a href=ttt_game.php?status=".$nextBoard.">#</a>";
+				return "<a href=ttt_game.php?status=".$nextBoard.">#</a>";
 			}
 			if ($end == yes) {
-				echo " ";
+				return " ";
 			}
 		}
 	}
 ?>
-
 <?php
 	// function notifyWinner ($winner) {
 	// 	if($winner) {
