@@ -23,16 +23,29 @@
 	$end = endGame($winner, $tie);
 	$nextBoard = next_Board($currentBoard, $score);
 ?>
-<?php $file_connection = fopen('storage.txt','a');?>
+<?php $file_connection = fopen('ttt.txt','a');?>
 <?php
 		$square = array(0,1,2,3,4,5,6,7,8);
+		$pos = array();
 		foreach ($square as $i) {
 			echo "<div class='board__square'>";
 			echo checkSpaces($currentBoard, $i, $end, $whoseNext, $nextBoard);
 			echo "</div>\n";
+			$pos[$i] = checkSpaces($currentBoard, $i, $end, $whoseNext, $nextBoard);
 		}
 ?>
-<?php fclose($file_connection);?>
+<?php
+		$x = ($pos[0].$pos[1].$pos[2]);
+		$y = ($pos[3].$pos[4].$pos[5]);
+		$z = ($pos[6].$pos[7].$pos[8]);
+
+?>
+<?php 
+		fwrite($file_connection, $x);
+		fwrite($file_connection, $y);
+		fwrite($file_connection, $z);
+		fclose($file_connection);
+?>
 </div>
 <div class="score">
 		<div class="score__row">
