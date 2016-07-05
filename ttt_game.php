@@ -10,59 +10,41 @@
 <div class = "header">
 	<a href="ttt_game.php?status=000000000123">Play again?</a>
 </div>
-
+<div class="container">
+<div class="board">
 <?php include ("ttt_game/ttt_functions.php"); ?>
 <?php 
 	$status = get_Status();
 	$currentBoard = get_Board($status);
 	$score = get_Score($status);
-	$whoseNext= whoseNext($currentBoard);
+	$whoseNext = whoseNext($currentBoard);
 	$winner = checkWin($currentBoard);
 	$tie = checkTie($currentBoard, $winner);
 	$end = endGame($winner, $tie);
 	$nextBoard = next_Board($currentBoard, $score);
 ?>
-<div class="container">
-<div class="board">
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=0, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=1, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=2, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=3, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=4, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=5, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=6, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=7, $end, $whoseNext, $nextBoard) ?>
-		</div>
-		<div class="board__square">
-			<?php checkSpaces($currentBoard, $square=8, $end, $whoseNext, $nextBoard) ?>
-		</div> 
+<?php $file_connection = fopen('storage.txt','a');?>
+<?php
+		$square = array(0,1,2,3,4,5,6,7,8);
+		foreach ($square as $i) {
+			echo "<div class='board__square'>";
+			echo checkSpaces($currentBoard, $i, $end, $whoseNext, $nextBoard);
+			echo "</div>\n";
+		}
+?>
+<?php fclose($file_connection);?>
 </div>
-	<div class="score">
+<div class="score">
 		<div class="score__row">
-			<?php showScore ($score, $player="You", $winner)  ?>
+			<?php showScore ($score, $player="Player1", $winner)  ?>
 		</div>
 		<div class="score__row">
-			<?php showScore ($score, $player="Opponent", $winner)  ?>
+			<?php showScore ($score, $player="Player2", $winner)  ?>
 		</div>
 		<div class="score__row">
 			<?php showScore ($score, $player="Draw", $winner) ?>
 		</div>
-	</div>
+</div>	
 </div>
 </body>
 </html>
