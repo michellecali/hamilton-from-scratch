@@ -1,4 +1,4 @@
-<?php $current = 'rps_game'; ?>
+<?php $current = 'game'; ?>
 <?php $title = 'rock | paper | scissors'; ?>
 <?php include ("includes/header.includes.php"); ?>
 			<form>

@@ -8,8 +8,8 @@ a {
   color: white;
   text-decoration: none;
 }
-
-/*.pagecontainer {
+/*
+.pagecontainer {
   display: -webkit-flex;
   display: flex;
   min-height:100vh;

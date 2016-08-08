@@ -3,7 +3,7 @@
 	<ul>
 	<li> <?php if($current == 'home') {echo 'home';} else {echo '<a href="index.php">home</a>';}?> </li>
 	<li> <?php if($current == 'my_vision') {echo 'my vision';} else {echo '<a href="my_vision.php">my vision</a>';}?> </li> 
-	<li> <?php if($current == 'game') {echo 'a bonus game!';} else {echo '<a href="game.php">a bonus game!</a>';}?> </li>
+	<li> <?php if($current == 'rps_game') {echo 'a bonus game!';} else {echo '<a href="rps_game.php">a bonus game!</a>';}?> </li>
 	</ul>
 
 				

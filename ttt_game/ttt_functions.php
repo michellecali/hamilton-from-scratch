@@ -1,13 +1,6 @@
-<?php 
-// The query string is initially set to x000000000 (do this in nav if it works)
-//  - the x character is unique to the square chosen
-//  - the 0s found in indices 1-9 which represent status of spaces on the board;
-// When a player selects a button, an updated query string is passed for use in the next turn via that button's value
-// in the comments below, Functions are noted as either 'logic' or 'notification' in terms of responsibility; tests for each can be found on test pages named accordingly?>
 
 <?php
 	function get_Status(){
-// this logic Function captures the parameter 'game' and returns the Variable $currentBoard; historical looking
 		if ($_GET['status']) {
 			$status = $_GET['status'];
 		}
@@ -24,63 +17,15 @@
 ?>
 <?php
 	function get_Score($status){
-	// this logic Function returns the Variable $score derived as a substring of $status
 		if ($status) {
-			$score = (substr($status, 9, 3));
+			$currentScore = (substr($status, 9, 3));
 		}
-		return $score;
+		return $currentScore;
 	}
 ?>
-<?php
-	function checkWin($currentBoard){
-		$win = array();
-		$winner = "none";
-			$win[0] = $currentBoard[0] . $currentBoard[1] . $currentBoard[2];
-			$win[1] = $currentBoard[3] . $currentBoard[4] . $currentBoard[5];
-			$win[2] = $currentBoard[6] . $currentBoard[7] . $currentBoard[8];
-			$win[3] = $currentBoard[0] . $currentBoard[3] . $currentBoard[6];
-			$win[4] = $currentBoard[1] . $currentBoard[4] . $currentBoard[7];
-			$win[5] = $currentBoard[2] . $currentBoard[5] . $currentBoard[8];
-			$win[6] = $currentBoard[0] . $currentBoard[4] . $currentBoard[8];
-			$win[7] = $currentBoard[2] . $currentBoard[4] . $currentBoard[6];
-			foreach($win as $i){
-				if($i=="aaa"){
-					$winner = "a";
-				}
-				elseif($i=="bbb"){
-					$winner = "b";
-				}
-			}
-			return $winner;
-	}
-?>
-<?php
-	function checkTie($currentBoard, $winner){
-		$tie = "no";
-		if ($winner = "none" && strpos($currentBoard, "0")===false) {
-				$tie = "yes";
-		}
-		return $tie;
-	}
-?>
-<?php
-	function endGame($winner, $tie){
-		$end = "no";
-			if ($winner == "a") {
-				$end = "yes";
-			}
-			elseif ($winner == "b") {
-				$end = "yes";
-			}
-			elseif ($tie == "yes") {
-				$end = "yes";
-			}
-		return $end;
-	}
-?>
+
 <?php
 	function whoseNext($currentBoard){
-// this logic Function returns variable $whoseNext by comparing the number of turns each player has taken
 		$i = "";
 		$j = "";
 		$whoseNext = "";
@@ -95,57 +40,156 @@
 		}
 	}
 ?>
+<?php 
+function nextBoards($currentBoard, $whoseNext) {
+	$nextBoards = array();
+	$square = array(0,1,2,3,4,5,6,7,8);
+	
+	foreach ($square as $i) {
+			if ($currentBoard[$i] == "0") {
+				$j = $currentBoard;
+				$j[$i] = $whoseNext;
+				$nextBoards[]=$j;
+			} 
+			else {
+				$nextBoards[] = $currentBoard;
+			}
+	}
+	return $nextBoards;
+}
+?>
+
 <?php
-	function newScore ($end, $score, $player, $winner) {
-		// start here - not working but not breaking
-		if ($end == "yes") {
-			$a = $score[0];
-			$b = $score[1];
-			$c = $score[2];
-			if ($player=="You" && $winner == "a") {
-				$score[0] = ($a + 1);
-				echo $score;
+	function checkWin($i){
+		$win = array();
+			$win[0] = $i[0] . $i[1] . $i[2];
+			$win[1] = $i[3] . $i[4] . $i[5];
+			$win[2] = $i[6] . $i[7] . $i[8];
+			$win[3] = $i[0] . $i[3] . $i[6];
+			$win[4] = $i[1] . $i[4] . $i[7];
+			$win[5] = $i[2] . $i[5] . $i[8];
+			$win[6] = $i[0] . $i[4] . $i[8];
+			$win[7] = $i[2] . $i[4] . $i[6];
+			foreach($win as $j){
+				if($j=="aaa"){
+					$winner = "a";
+				}
+				elseif($j=="bbb"){
+					$winner = "b";
+				}
 			}
-			if ($player=="Opponent" && $winner == "b") {
-				$score[1] = ($b + 1);
-				echo $score;
-			}
-			if ($player=="Draw" && $tie == "yes"){
-				$score[2] = ($c + 1);
-				echo $score;
-			}
-		}
+			return $winner;
 	}
 ?>
 <?php
-	function next_Board($currentBoard, $score){
-		$nextBoard = $currentBoard;
-		if ($score != "") {
-			$nextBoard = $currentBoard.$score;
-		}
-		return $nextBoard;
+	function checkAllWins($nextBoards){
+		$a = $nextBoards;
+		$possibleWins = array_map("checkWin", $a);
+		return $possibleWins;
 	}
 ?>
 <?php
-	function checkSpaces($currentBoard, $square, $end, $whoseNext, $nextBoard){
-		if($currentBoard[$square] == "a"){
-			return "X";
+	function checkTie($i){
+		$tie = "no";
+		if (substr_count($i, "0")==0){
+				$tie = "yes";
 		}
-		elseif($currentBoard[$square] == "b"){
-			return "O";
-		}
-		elseif($currentBoard[$square] == "0"){
-			if ($end == no) {
-				$nextBoard[$square] = $whoseNext;
-				return "<a href=ttt_game.php?status=".$nextBoard.">#</a>";
-			}
-			if ($end == yes) {
-				return " ";
-			}
-		}
+		return $tie;
 	}
 ?>
 <?php
+	function checkAllTies($nextBoards){
+		$a = $nextBoards;
+		$possibleTies = array_map("checkTie", $a);
+		return $possibleTies;
+	}
+?>
+<?php
+function nextScores($currentScore, $possibleWins, $possibleTies){
+$nextScores = array();
+	$square = array(0,1,2,3,4,5,6,7,8);
+	
+	foreach ($square as $i) {
+			if ($possibleWins[$i] == "a") {
+				$j = $currentScore;
+				$j[0] = ($j[0] + 1);
+				$nextScores[]=$j;
+			} 
+			elseif ($possibleWins[$i] == "b") {
+				$j = $currentScore;
+				$j[1] = ($j[1] + 1);
+				$nextScores[]=$j;
+			}
+			elseif ($possibleTies[$i] == "yes") {
+				$j = $currentScore;
+				$j[2] = ($j[2] + 1);
+				$nextScores[]=$j;
+			}
+			else {
+				$nextScores[] = $currentScore;
+			}
+	}
+	return $nextScores;
+}
+?>
+<?php
+	function endGame($currentBoard){
+		$end = "";
+		$i = checkWin($currentBoard);
+		$j = checkTie($currentBoard);
+			if ($i == "a" || "b") {
+				$end = "yes";
+			}
+			elseif ($j == "yes") {
+				$end = "yes";
+			}
+			else {
+				$end = "no";
+			}
+		return $end;
+		echo "i is $i";
+		echo "j is $j";
+	}
+?>
+<?php
+//model code
+	function nextStatuses($nextBoards, $nextScores){
+		$nextStatuses = array();
+		$square = array(0,1,2,3,4,5,6,7,8);
+		foreach ($square as $i) {
+			$nextStatuses[$i] = $nextBoards[$i].$nextScores[$i];
+		}
+		return $nextStatuses;
+	}
+?>
+<?php
+//display code?
+	function printBoard($currentBoard, $end, $nextStatuses){
+		$square = array(0,1,2,3,4,5,6,7,8);
+		foreach ($square as $i) {
+			$j = $currentBoard;
+			if($j[$i] == "a"){
+				$printHTML[$i] = "<div class='board__square'>X</div>\n";
+			}
+			elseif($j[$i] == "b"){
+				$printHTML[$i] =  "<div class='board__square'>O</div>\n";
+			}
+			elseif($j[$i] == "0"){
+				if ($end == "no") {
+					$k = $nextStatuses[$i];
+					$printHTML[$i] = "<div class='board__square'><a href=ttt_game.php?status=".$k.">#</a></div>\n";
+				}
+				if ($end == "yes") {
+					$printHTML[$i] =  "n";
+				}
+			}
+		}
+		return $printHTML;
+	}
+?>
+
+<?php
+//would be display code if in play?
 	// function notifyWinner ($winner) {
 	// 	if($winner) {
 	// 		if($winner = "a") {

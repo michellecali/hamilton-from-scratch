@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <meta charset="UTF-8">
-		<title><?php echo $title; ?></title>
+		<?php bloginfo('wpurl');?>"><?php echo get_bloginfo( 'name' ); ?>
+		<?php echo get_bloginfo( 'description' ); ?>
 		<link href='https://fonts.googleapis.com/css?family=Lobster+Two:400,700,400italic,700italic%7CArimo:400,700,700italic,400italic' rel='stylesheet' type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Cantata+One%7CImprima' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" type="text/css" href="css/styles.css">	

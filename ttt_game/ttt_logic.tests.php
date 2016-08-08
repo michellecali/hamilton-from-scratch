@@ -1,6 +1,7 @@
 <?php include ("ttt_functions.php"); ?>
 <?php 
 	echo "\nTesting function get_Status(); return query string as variable.\n";
+	// Only wrote this test to verify my understanding of the $_GET function
 		$_GET['status'] = "000a00000";
 		$status= "";
 		if (get_Status() == "000a00000") {
@@ -191,6 +192,15 @@
 	  	}
 	echo "\n-------------------------------------------------------------------\n";
 ?>
+<?php 
+	echo "\nTesting function nextBoards().\n";
+		$currentBoard = "a000b0000";
+		$whoseNext = "a";
+		print_r (nextBoards($currentBoard, $whoseNext));
+	
+	echo "\n------------------------------------------------------------------\n";
+?>
+
 <?php 
 	echo "\n###################################################################\n";
 	echo "Tests complete.\n"; 
